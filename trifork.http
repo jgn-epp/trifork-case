@@ -41,7 +41,7 @@ Content-Type: application/json
 }
 
 ### Update Player 2 initials
-PATCH {{trifork_HostAddress}}/foosball/players/57ad75ea-e5f4-4876-a0c5-9acb5c882011
+PATCH {{trifork_HostAddress}}/foosball/players/f98c5545-7412-4770-b076-ad3fd56f5960
 Content-Type: application/json
 
 {
@@ -49,7 +49,7 @@ Content-Type: application/json
 }
 
 ### Update Player 2 initials but its way too long
-PATCH {{trifork_HostAddress}}/foosball/players/57ad75ea-e5f4-4876-a0c5-9acb5c882011
+PATCH {{trifork_HostAddress}}/foosball/players/f98c5545-7412-4770-b076-ad3fd56f5960
 Content-Type: application/json
 
 {
@@ -70,17 +70,17 @@ POST {{trifork_HostAddress}}/foosball/match
 Content-Type: application/json
 
 {
-  "team1Player1": "d8c683d1-a074-400c-a0b7-fb72a080caa1",
-  "team1Player2": "874681cd-47bd-460b-b8dc-607757a4a17b",
-  "team2Player1": "f60ea8f6-ffc1-4232-bb6e-8e20d7078b6b",
-  "team2Player2": "9c9c32a9-ab84-4922-b6f7-039cc3902520"
+  "team1Player1": "a34baeea-5eb4-4839-add3-518e3f6fbcc3",
+  "team1Player2": "fefa91e2-b8ab-4dd6-bb62-400b6ffceca7",
+  "team2Player1": "52a327c0-a305-41fe-ae51-c398af031ec0",
+  "team2Player2": "b446c89e-6e5a-4105-8916-ad3eba8c3b8d"
 }
 
 ### Get Match
-GET {{trifork_HostAddress}}/foosball/match/eb794479-b391-4a18-a550-3e54dc2b734d
+GET {{trifork_HostAddress}}/foosball/match/376430ea-77a7-4c32-b5fb-40121feb99f2
 
 ### Update Match
-PATCH {{trifork_HostAddress}}/foosball/match/eb794479-b391-4a18-a550-3e54dc2b734d
+PATCH {{trifork_HostAddress}}/foosball/match/376430ea-77a7-4c32-b5fb-40121feb99f2
 Content-Type: application/json
 
 {

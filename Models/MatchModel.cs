@@ -21,6 +21,7 @@ public class MatchModel
     public PlayerModel? Team2Player2 { get; init; }
     public WinningTeamEnum WinningTeam { get; set; } = WinningTeamEnum.Tbd;
 
+    [JsonIgnore]
     public ICollection<PlayerModel> WinningPlayers => WinningTeam switch
     {
         WinningTeamEnum.Team1 => new [] { Team1Player1, Team1Player2 },

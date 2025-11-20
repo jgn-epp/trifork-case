@@ -41,14 +41,15 @@ public class FoosballController : ControllerBase
     [Route("players/{playerId:guid}")]
     public async Task<IResult> UpdatePlayer(Guid playerId, [FromBody] UpdatePlayerModel player, [FromServices] IValidator<UpdatePlayerModel> validator)
     {
-        ValidationResult result = await validator.ValidateAsync(player with { Id = playerId });
+        var playerWithId = player with { Id = playerId };
+        ValidationResult result = await validator.ValidateAsync(playerWithId);
 
         if (!result.IsValid)
         {
             return CreateBadRequestResponse(result.Errors);
         }
 
-        PlayerModel? updatedPlayerModel = await _dataAccess.UpdatePlayer(player);
+        PlayerModel? updatedPlayerModel = await _dataAccess.UpdatePlayer(playerWithId);
 
         return Results.Ok(updatedPlayerModel);
     }
@@ -116,14 +117,15 @@ public class FoosballController : ControllerBase
     [Route("match/{matchId:guid}")]
     public async Task<IResult> UpdateMatch(Guid matchId, [FromBody] UpdateMatchResultModel updateMatchResult, [FromServices] IValidator<UpdateMatchResultModel> validator)
     {
-        ValidationResult result = await validator.ValidateAsync(updateMatchResult with { MatchId = matchId });
+        var matchResultWithId = updateMatchResult with { MatchId = matchId };
+        ValidationResult result = await validator.ValidateAsync(matchResultWithId);
 
         if (!result.IsValid)
         {
             return CreateBadRequestResponse(result.Errors);
         }
 
-        var updatedMatchModel = await _dataAccess.UpdateMatch(updateMatchResult);
+        var updatedMatchModel = await _dataAccess.UpdateMatch(matchResultWithId);
         
         return Results.Ok(updatedMatchModel);
     }
