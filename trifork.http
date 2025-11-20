@@ -1,0 +1,90 @@
+@trifork_HostAddress = http://localhost:5174
+
+
+### Add Player 1
+POST {{trifork_HostAddress}}/foosball/players
+Content-Type: application/json
+
+{
+  "name": "Ole Odder",
+  "initials": "OO",
+  "handicap": 7
+}
+
+### Add Player 2
+POST {{trifork_HostAddress}}/foosball/players
+Content-Type: application/json
+
+{
+  "name": "Jens Lyn",
+  "initials": "JK",
+  "handicap": 2
+}
+
+### Add Player 3
+POST {{trifork_HostAddress}}/foosball/players
+Content-Type: application/json
+
+{
+  "name": "Jeppe Gade Nielsen",
+  "initials": "jgn"
+}
+
+### Add Player 4
+POST {{trifork_HostAddress}}/foosball/players
+Content-Type: application/json
+
+{
+  "name": "Nella Freinhofer",
+  "initials": "NF",
+  "handicap": 14
+}
+
+### Update Player 2 initials
+PATCH {{trifork_HostAddress}}/foosball/players/57ad75ea-e5f4-4876-a0c5-9acb5c882011
+Content-Type: application/json
+
+{
+  "initials": "JL"
+}
+
+### Update Player 2 initials but its way too long
+PATCH {{trifork_HostAddress}}/foosball/players/57ad75ea-e5f4-4876-a0c5-9acb5c882011
+Content-Type: application/json
+
+{
+  "initials": "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+}
+
+### Delete Player
+DELETE {{trifork_HostAddress}}/foosball/players/b1227506-39d5-4ac2-8194-35a811b6b56b
+
+### List Players
+GET {{trifork_HostAddress}}/foosball/players/
+
+### Search Players
+GET {{trifork_HostAddress}}/foosball/players/search/Je
+
+### Add Match
+POST {{trifork_HostAddress}}/foosball/match
+Content-Type: application/json
+
+{
+  "team1Player1": "f4faede7-3b5f-4234-a501-6a2acce1d454",
+  "team1Player2": "d7affe9b-3551-4d65-9f8c-82a2e6d53a63",
+  "team2Player1": "c237f420-9b3a-407c-a025-389369810186",
+  "team2Player2": "574a7df2-afcd-4384-adbc-60662607afc2"
+}
+
+### Get Match
+GET {{trifork_HostAddress}}/foosball/match/3190445a-4f4a-41b5-9899-649c1cb248c3
+
+### Update Match
+PATCH {{trifork_HostAddress}}/foosball/match/3190445a-4f4a-41b5-9899-649c1cb248c3
+Content-Type: application/json
+
+{
+  "matchId": "3190445a-4f4a-41b5-9899-649c1cb248c3",
+  "winningTeam": 1
+}
+
