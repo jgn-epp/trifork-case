@@ -1,6 +1,7 @@
 using trifork.Models;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using trifork.Data;
 using trifork.Interfaces;
 using trifork.Models.Input;
 
@@ -11,7 +12,7 @@ builder.Services.AddScoped<IValidator<UpdatePlayerModel>, UpdatePlayerModelValid
 builder.Services.AddScoped<IValidator<CreateMatchModel>, CreateMatchModelValidator>();
 builder.Services.AddScoped<IValidator<UpdateMatchResultModel>, UpdateMatchResultModelValidator>();
 
-builder.Services.AddDbContext<FoosballContext>(opt =>
+builder.Services.AddDbContext<DataAccess>(opt =>
     opt.UseInMemoryDatabase("FoosballDb")
 );
 

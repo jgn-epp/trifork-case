@@ -4,7 +4,7 @@ namespace trifork.Models.Input;
 
 public record UpdatePlayerModel
 {
-    public Guid Id { get; set; }
+    public Guid Id { get; init; }
     public string? Name { get; init; }
     public string? Initials { get; init; }
 }

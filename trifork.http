@@ -70,21 +70,21 @@ POST {{trifork_HostAddress}}/foosball/match
 Content-Type: application/json
 
 {
-  "team1Player1": "f4faede7-3b5f-4234-a501-6a2acce1d454",
-  "team1Player2": "d7affe9b-3551-4d65-9f8c-82a2e6d53a63",
-  "team2Player1": "c237f420-9b3a-407c-a025-389369810186",
-  "team2Player2": "574a7df2-afcd-4384-adbc-60662607afc2"
+  "team1Player1": "d8c683d1-a074-400c-a0b7-fb72a080caa1",
+  "team1Player2": "874681cd-47bd-460b-b8dc-607757a4a17b",
+  "team2Player1": "f60ea8f6-ffc1-4232-bb6e-8e20d7078b6b",
+  "team2Player2": "9c9c32a9-ab84-4922-b6f7-039cc3902520"
 }
 
 ### Get Match
-GET {{trifork_HostAddress}}/foosball/match/3190445a-4f4a-41b5-9899-649c1cb248c3
+GET {{trifork_HostAddress}}/foosball/match/eb794479-b391-4a18-a550-3e54dc2b734d
 
 ### Update Match
-PATCH {{trifork_HostAddress}}/foosball/match/3190445a-4f4a-41b5-9899-649c1cb248c3
+PATCH {{trifork_HostAddress}}/foosball/match/eb794479-b391-4a18-a550-3e54dc2b734d
 Content-Type: application/json
 
 {
-  "matchId": "3190445a-4f4a-41b5-9899-649c1cb248c3",
-  "winningTeam": 1
+  "matchId": "eb794479-b391-4a18-a550-3e54dc2b734d",
+  "winningTeam": 2
 }
 
